@@ -7,7 +7,7 @@
 # Authors:
 # Xiangmin Jiao <xmjiao@gmail.com>
 
-FROM unifem/desktop-base:latest
+FROM compdatasci/spyder-desktop
 LABEL maintainer "Xiangmin Jiao <xmjiao@gmail.com>"
 
 USER root
@@ -16,6 +16,7 @@ WORKDIR /tmp
 # Install Code-Aster and petsc
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+    	gfortran \
 	code-aster \
 	code-aster-mpi-engine \
 	code-aster-gui \
